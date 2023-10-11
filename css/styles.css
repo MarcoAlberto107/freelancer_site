@@ -1,0 +1,245 @@
+:root{
+    --white: #ffffff;
+    --black: #212121;
+    --yellow: #ffc107;
+    --blue: #0097a7;
+    --gray: #757575;
+    --DFsize: 3.8rem;
+    --DF: 'Krub', sans-serif;
+}
+
+
+/*Globals*/
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    background-image: linear-gradient(to top, #DEDAEE 0%, var(--white) 50%);
+    /*scroll-snap-type: y mandatory; Sirve para que al hacer scrooll se pare siempre centrando las secciones que le definas*/
+}
+
+/*.title, .main, .contacto{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+Areas definidas para scrollsnap
+*/
+
+*, *:before, *:after {
+        box-sizing: inherit;
+      
+}
+
+body{
+    font-size: 15px;
+    font-family: var(--DF);
+}
+
+
+/*Clases*/
+.title {
+    text-align: center;
+    font-size: 4rem;
+    color: var(--black);
+    
+}
+.title span{
+    font-size: 2.5rem;
+    color: burlywood;
+}
+
+.principal-navegation{
+    margin: 0 auto 0 auto;
+    display: flex; /*Esto activa flexbox para poder distribuir y alinear elementos en css. Lo de la linea de abajo es el modo en el que se va a palicar flexbox*/
+    justify-content: space-around;
+}
+
+.container{
+    max-width: 120rem;
+    margin: 0 auto; /*Margin 0 auto alinea sin necesidad de usar flexbox*/
+}
+
+h2{
+    text-align: center;
+
+}
+
+.shadow{
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(184,178,184,1);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(184,178,184,1);
+    box-shadow: 0px 5px 15px 0px rgba(184,178,184,1);
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 0.3rem;
+}
+
+.principal-navegation a{
+    color: var(--white);
+    text-decoration: none; /*Para quitar el subrratyado automatico de los enlaces*/
+    font-weight: bold;
+    font-size: 1.75rem;
+    padding: 1rem 3rem 1rem 3rem;
+}
+
+.principal-navegation a:hover, .button:hover{
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
+.nav-bg{
+    background-color: var(--blue);
+}
+
+.hero{
+    background-image: url(../resources/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.hero-content{
+    position: absolute;
+    background-color: rgba(0,0,0,.75);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    /*Alineacion con flexbox*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content:center;
+    color: var(--white);
+}
+
+.hero-content h2{
+    font-size: 3rem;
+}
+
+.button{
+    text-decoration: none;
+    color: var(--white);
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.75rem;
+    background-color: var(--blue);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.servicios-section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /*Tambien se puede dividir el espacio asi: "grid-template-columns: 33% 33% 33%;" 
+    o tambien "grid-template-columns: 1fr 1fr 1fr". /*fr es para fraccionar el espacio, en este caso, se fracciona en tres partes iguales, pero si pusiera "1fr 1fr 2fr", entonses el contenido se dividira en tres partes, pero la ultima sera el doble de las dos primeras*/
+    column-gap: 1rem; /*Margen interno en grid*/
+
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio .icons{
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    background-color: var(--yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.servicio h3{
+    color: var(--blue);
+}
+
+.form{
+    background-color: var(--gray);
+    width: min(60rem, 100%); /*Min apllica el valor mas pequeño que le coloquemos*/
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+
+}
+
+.formulario fieldset{
+    border: none;
+}
+
+.form legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--yellow);
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 600px){
+    .inputs-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto auto;
+        column-gap: 1rem;
+    }
+
+    .form-input:nth-child(3), .form-input:nth-child(4){
+        grid-column: 1/3;
+    }
+}
+
+.form-input{
+    margin-bottom: 1rem;
+}
+
+.form-input label{
+    color: var(--white);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+    margin-right: 0.5rem;
+}
+
+.form-input input, .form-input textarea{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.textarea{
+    height: 20rem;
+}
+
+.footer{
+    padding-top: 2rem;
+    text-align: center;
+}
+
+
+
+@media(max-width: 600px){
+    .principal-navegation{
+        flex-direction:column;
+    }
+
+    .button, .button:hover{
+        width: 80%;
+    }
+    .servicios-section{
+        display: block;
+    }
+
+    .button-enviar{
+        display: flex;
+        justify-content: center;
+    }
+}
